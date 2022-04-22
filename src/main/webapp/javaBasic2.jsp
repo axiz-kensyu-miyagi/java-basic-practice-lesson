@@ -13,7 +13,7 @@
  
     // 各平均を入れるための配列
 
-    // 各平均点を計算し、配列へ計算結果を代入
+	// 各平均点を計算し、配列へ計算結果を代入
     // ただし、平均点を計算する際にint型の値を小数点以下が
     // 扱える型にキャストする(キャスト演算子を使用してください)必要がある
     // そのキャストした値を割って、平均点を求める
@@ -24,7 +24,17 @@
 
     // 全点数の合計を求め、変数へ代入
 
+	
     // 合計点数の平均を求めて、変数へ代入
+    
+    double[] ave = new double[3];
+    
+    ave[0] = ((double)aScore[0]+bScore[0])/2;
+    ave[1] = ((double)aScore[1]+bScore[1])/2;
+    ave[2] = ((double)aScore[2]+bScore[2])/2;
+    
+    double total;
+    total = (ave[0] + ave[1] + ave[2]);
     
 %>
 <!DOCTYPE html>
@@ -56,22 +66,22 @@ table th, table td {
     </tr>
     <tr>
       <td>Aさん</td>
-      <td>xxx</td>
-      <td>xxx</td>
-      <td>xxx</td>
+      <td><% out.println(aScore[0]);  %></td>
+      <td><% out.println(aScore[1]);  %></td>
+      <td><% out.println(aScore[2]);  %></td>
     </tr>
     <tr>
       <td>Bさん</td>
-      <td>xxx</td>
-      <td>xxx</td>
-      <td>xxx</td>
+      <td><% out.println(bScore[0]);  %></td>
+      <td><% out.println(bScore[1]);  %></td>
+      <td><% out.println(bScore[2]);  %></td>
     </tr>
   </table>
 
   <h2>平均点</h2>
-  <p>国語：xxx</p>
-  <p>数学：xxx</p>
-  <p>英語：xxx</p>
-  <p>合計：xxx</p>
+  <p>国語：<% out.println(ave[0]); %></p>
+  <p>数学：<% out.println(ave[1]); %></p>
+  <p>英語：<% out.println(ave[2]); %></p>
+  <p>合計：<% out.println(total); %></p>
 </body>
 </html>
