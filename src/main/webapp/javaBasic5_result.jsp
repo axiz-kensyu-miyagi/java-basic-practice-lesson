@@ -13,10 +13,26 @@
     double result = 0;
 
     // todo:要実装
+
     // Utilityクラス内のメソッドを呼んで結果を取得
+	int width = Integer.parseInt(widthStr);
+	int height = Integer.parseInt(heightStr);
+	//int width = Integer.valueOf(widthStr);
+	//int height = Integer.valueOf(heightStr);
+
     // 三角形、長方形のどちらのボタンを押したかを判断し、
     // 押したボタンに対応するメソッドを呼ぶ
-
+    
+     switch(btn){
+	     case "triangle":
+	    	result =  (double)(height * width) / 2;
+	        //result = Math.pow((height * width) / 2);
+     		break;
+    	 case"rectangle":
+  			result = height * width;
+    		break;
+     }
+    
 %>
 
 <!DOCTYPE html>
@@ -30,7 +46,7 @@
 
   <h2>計算結果</h2>
   <p>
-    面積：<%=result%><br>
+    面積：<%=String.format("%.1f",result) %><br>
   </p>
   <a href="javaBasic5_input.jsp">戻る</a>
 </body>
